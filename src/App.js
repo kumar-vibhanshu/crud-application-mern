@@ -5,14 +5,20 @@ import Home from './components/Home';
 import AllUsers from './components/AllUsers';
 import AddUser from './components/AddUser';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
-      <Home />
-      <AllUsers />
-      <AddUser/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/alluser' element={<AllUsers />} />
+        <Route path='/adduser' element={<AddUser />}/>
+      </Routes>
+      
+    </BrowserRouter>
   );
 }
 
